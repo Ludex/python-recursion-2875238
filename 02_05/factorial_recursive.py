@@ -5,8 +5,7 @@ Robin Andrews - https://compucademy.net/
 import sys
 from trace_recursion import trace
 
-sys.path.append("..")  # Adds higher directory to python modules path.
-
+#sys.path.append("../")  # Adds higher directory to python modules path.
 
 def factorial(n):
     if n <= 1:

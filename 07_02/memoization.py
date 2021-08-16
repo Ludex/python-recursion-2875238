@@ -28,20 +28,30 @@ def fib_lru(n):
 
 # Manual caching using a dictionary.
 def fib_cache(n, cache=None):
-    pass
+    """
+    Returns the n-th Fibonacci number.
+    """
+    if cache is None:
+        cache = {}
+    if n in cache:
+        return cache[n]
+    elif n <= 1:
+        return n
+    result = fib_cache(n-1, cache) + fib_cache(n-2, cache)
+    cache[n] = result
+    return result
 
-
-n = 900
+n = 400
 
 # start = time.perf_counter()
 # fib(n)
 # end = time.perf_counter()
 # print("Plain recursive version. Seconds taken: {:.7f}".format(end - start))
 #
-# start = time.perf_counter()
-# fib_lru(n)
-# end = time.perf_counter()
-# print("lru cache version. Seconds taken: {:.7f}".format(end - start))
+start = time.perf_counter()
+fib_lru(n)
+end = time.perf_counter()
+print("lru cache version. Seconds taken: {:.7f}".format(end - start))
 #
 start = time.perf_counter()
 fib_cache(n)

@@ -5,7 +5,12 @@ Robin Andrews - https://compucademy.net/
 
 
 def factorial(n):
-    pass
+    if n <= 1:
+        #base case
+        return 1
+    else:
+        #recursive case
+        return n * factorial(n-1)
 
 
 print(factorial(4))

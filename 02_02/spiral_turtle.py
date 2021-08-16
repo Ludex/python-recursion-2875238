@@ -5,8 +5,8 @@ Robin Andrews - https://compucademy.net/
 
 import turtle
 
-MAX_LENGTH = 250
-INCREMENT = 10
+MAX_LENGTH = 750
+INCREMENT = 5
 
 
 def draw_spiral(a_turtle, line_length):
@@ -20,5 +20,6 @@ def draw_spiral(a_turtle, line_length):
 charlie = turtle.Turtle(shape="turtle")
 charlie.pensize(5)
 charlie.color("red")
+charlie.speed(0)
 draw_spiral(charlie, 10)
 turtle.done()
